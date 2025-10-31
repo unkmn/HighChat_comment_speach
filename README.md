@@ -1,0 +1,2 @@
+# HighChat_comment_speach
+HighChatのコメントを棒読みちゃんやわんコメに転送するChrome拡張機能
