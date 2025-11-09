@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NGワード設定</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: sans-serif; width: 450px; padding: 10px; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        div { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"] { width: 95%; padding: 5px; }
+        button { padding: 5px 10px; cursor: pointer; }
+        #ngWordList { list-style-type: none; padding-left: 0; }
+        #ngWordList li { display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #eee; }
+        #ngWordList li button { background-color: #f44336; color: white; border: none; }
+        fieldset { border: 1px solid #ccc; padding: 10px; }
+        legend { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>NGワード設定</h2>
+    <fieldset>
+        <legend>NGワード登録</legend>
+        <div>
+            <label for="ngWordInput">NGワード</label>
+            <input type="text" id="ngWordInput">
+        </div>
+        <div>
+            <label>一致種別</label>
+            <select id="ngMatchType">
+                <option value="partial">部分一致</option>
+                <option value="prefix">前方一致</option>
+                <option value="suffix">後方一致</option>
+            </select>
+        </div>
+        <button id="addNgWord">NGワードを追加</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>NGワード一覧</legend>
+        <ul id="ngWordList"></ul>
+    </fieldset>
+
+    <script src="options.js"></script>
+</body>
+</html>

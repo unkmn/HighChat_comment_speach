@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "HighChat チャット読み上げ",
+  "version": "1.1.0.0",
+  "description": "HighChatの配信ページでチャットを監視し、棒読みちゃんにHTTP転送します。",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://ikasekai.com/highchat/live/*",
+    "http://localhost/*"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ikasekai.com/highchat/live/*"],
+      "js": ["content.js"],
+      "css": []
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "チャット読み上げ設定",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png"
+    }
+  },
+  "icons": {
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>設定</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: sans-serif; width: 300px; padding: 10px; }
+        h1 { font-size: 1.2em; text-align: center; margin: 15px 0 10px 0; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 10px; font-size: 1.0em; }
+        div { margin-top: 7px; margin-bottom: 7px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="number"] { width: 95%; padding: 5px; }
+        fieldset { border: 1px solid #ccc; padding: 10px; }
+        legend { font-weight: bold; }
+        #ngSettingsLink { display: block; text-align: center; margin-top: 15px; cursor: pointer; color: blue; text-decoration: underline; }
+        div.bg-bouyomi {background-color: rgb(250, 221, 208);}
+        div.bg-one-comme {background-color:rgb(250, 232, 194)}
+        div.group-container {padding: 4px; margin-top:6px; margin-bottom:10px;}
+    </style>
+</head>
+<body>
+
+    <h1>HighChat 読み上げ設定</h1>
+
+    <div class="group-container">
+        <div class="bg-bouyomi">
+            <label><input type="checkbox" id="isEnabled"> 読み上げを有効にする</label>
+        </div>
+        <div class="bg-one-comme">
+            <label><input type="checkbox" id="isOneCommeEnabled"> わんコメへの転送を有効にする</label>
+        </div>
+    </div>
+
+    <div class="group-container bg-bouyomi">
+        <h2>棒読みちゃん 設定</h2>
+
+        <div>
+            <label for="autoStartStreamerName">自動で読み上げを開始する配信者名（空白OK）</label>
+            <input type="text" id="autoStartStreamerName">
+        </div>
+        
+        <div>
+            <label for="port">棒読みちゃん HTTPポート番号</label>
+            <input type="number" id="port" min="0" max="65535">
+        </div>
+
+        <h2>棒読みちゃん 読み上げテキスト設定</h2>
+        <div>
+            <label for="startMessage">読み上げ開始時（空白OK）</label>
+            <input type="text" id="startMessage">
+        </div>
+        <div>
+            <label for="stopMessage">読み上げ停止時（空白OK）</label>
+            <input type="text" id="stopMessage">
+        </div>
+
+        <h2>棒読みちゃん 発言者設定</h2>
+        <div>
+            <label><input type="checkbox" id="readName"> 発言者名を読み上げる</label>
+        </div>
+        <div>
+            <label for="honorific">発言者名に加える敬称（空白OK）</label>
+            <input type="text" id="honorific">
+        </div>
+
+        <h2>棒読みちゃん その他設定</h2>
+        <div>
+            <label><input type="checkbox" id="isBrEnabled"> 改行を反映する</label>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="group-container bg-one-comme">
+        <h2>わんコメ 連携設定</h2>
+        <div>
+            <label for="autoStartOneCommeStreamerName">自動で連携を開始する配信者名（空白OK）</label>
+            <input type="text" id="autoStartOneCommeStreamerName">
+        </div>
+
+        <div>
+            <label for="oneCommeId">連携先のわんコメID（空白OK）</label>
+            <input type="text" id="oneCommeId">
+            <small>転送先に指定するわんコメの配信枠を右クリック→IDをコピー で取得したIDを貼り付ける</small>
+        </div>
+
+        <div>
+            <label for="extentionId">拡張機能ID</label>
+            <input type="text" id="extentionId" readonly>
+            <small>このIDをわんコメの 設定→API→許可ホスト に貼り付け</small>
+        </div>
+
+        <h2>わんコメ 読み上げテキスト設定</h2>
+        <div>
+            <label for="oneCommeStartMessage">連携開始時（空白OK）</label>
+            <input type="text" id="oneCommeStartMessage">
+        </div>
+        <div>
+            <label for="oneCommeStopMessage">連携停止時（空白OK）</label>
+            <input type="text" id="oneCommeStopMessage">
+        </div>
+
+        <h2>わんコメ 匿名・未ログイン者の発言</h2>
+        <div>
+            <label for="oneCommeAnonymous">匿名の発言に付ける名前（空白OK）</label>
+            <input type="text" id="oneCommeAnonymous">
+        </div>
+        <div>
+            <label for="oneCommeNotLogin">未ログイン者の名前の後に付ける文言（空白OK）</label>
+            <input type="text" id="oneCommeNotLogin">
+        </div>
+
+        <h2>わんコメ その他設定</h2>
+        <div>
+            <label><input type="checkbox" id="isOneCommeBrEnabled"> 改行を反映する</label>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>NGワード検知時</h2>
+    <fieldset>
+        <div>
+            <label><input type="checkbox" id="ngActionNoRead"> 読み上げない</label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="ngActionDelete" disabled> 発言を自動削除する
+            </label>
+            <small id="ngDeleteHelp">※配信者権限があるページでのみ有効</small>
+        </div>
+    </fieldset>
+
+    <a id="ngSettingsLink">NGワード登録はこちら</a>
+
+    <script src="popup.js"></script>
+</body>
+</html>
