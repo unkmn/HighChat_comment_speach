@@ -13,7 +13,7 @@ const defaultSettings = {
     oneCommeId: "",
     oneCommeStartMessage: "わんコメ連携を開始します",
     oneCommeStopMessage: "",
-    oneCommeAnonymous: "(匿名)",
+    oneCommeAnonymous: "匿名",
     oneCommeNotLogin: "(未ログイン)",
     isOneCommeBrEnabled: true
 };
