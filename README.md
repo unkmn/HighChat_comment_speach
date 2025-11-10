@@ -70,14 +70,14 @@ Google Chrome(141.0.7390.108)、Microsoft Edge(141.0.3537.99)で動作確認済
 
 # 導入方法
 ## Google Chrome への導入
-1. [拡張機能ページ](chrome://extensions/)を開く
+1. 拡張機能ページ（chrome://extensions/）を開く
 2. 拡張画面右上の「デベロッパー モード」をONにする<br>![alt text](docimage/chrome01.jpg)
 3. ダウンロードしたZIPを解凍した中身「highchat_comment_speach」フォルダを拡張機能メニューへドラッグ＆ドロップ<br>![alt text](docimage/chrome02.jpg)
 
 <br>
 
 ## Microsoft Edge への導入
-1. [拡張機能の管理](edge://extensions/)を開く
+1. 拡張機能の管理（edge://extensions/）を開く
 2. 左メニューバーの「開発者モード」をONにする<br>![alt text](docimage/edge01.jpg)
 3. ダウンロードしたZIPを解凍した中身「highchat_comment_speach」フォルダを拡張機能メニューへドラッグ＆ドロップ<br>![alt text](docimage/edge02.jpg)
 
