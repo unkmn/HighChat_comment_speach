@@ -182,7 +182,7 @@ async function deleteComment(liElement) {
 }
 
 // 5. 新規コメント処理
-function processNewComment(liElement) {
+async function processNewComment(liElement) {
     if (!(isEnabled || isOneCommeEnabled)) return;
 
     // 1. コメント本文取得
@@ -331,7 +331,7 @@ function processNewComment(liElement) {
                 oneCommeText = oneCommeText.replace(REPLACE_TXT_EMOJI, replaceTag);
             });
             // コメント内に<br>置換対象の特殊文字列が存在する場合は置換処理を行う
-            oneCommeText = oneCommeText.replaceAll(REPLACE_TXT_BR, "<br>");
+            oneCommeText = oneCommeText.replaceAll(REPLACE_TXT_BR, " <br>");
 
             // ユーザー名を取得
             const nameElement = liElement.querySelector('b.highchat_comment__name');
@@ -439,13 +439,13 @@ function startObserver() {
         return;
     }
 
-    chatListObserver = new MutationObserver((mutationsList) => {
+    chatListObserver = new MutationObserver(async (mutationsList) => {
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                mutation.addedNodes.forEach(node => {
+                mutation.addedNodes.forEach(async node => {
                     if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'LI') {
                         // コメント欄の子要素に<li>の追加を検知したら処理を実施
-                        processNewComment(node);
+                        await processNewComment(node);
                     }
                 });
             }
