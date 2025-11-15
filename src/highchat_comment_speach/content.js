@@ -44,7 +44,10 @@ function updateEnabledState(newIsEnabled, oldIsEnabled = undefined) {
                 sendToBouyomi(items.stopMessage);
             }
         });
-        stopObserver();
+        // わんコメ連携も停止している場合は監視を停止する
+        if (!isEnabled && !isOneCommeEnabled) {
+            stopObserver();
+        }
     }
 }
 
@@ -68,7 +71,10 @@ function updateOneCommeEnabledState(newIsOneCommeEnabled, oldIsOneCommeEnabled =
         chrome.storage.local.get("oneCommeStopMessage", (items) => {
             sendToOneComme(messageId, "highchat_extention_user_id", "", false, "Highchat 読み上げ連携", items.oneCommeStopMessage);
         });
-        stopObserver();
+        // 棒読みちゃん連携も停止している場合は監視を停止する
+        if (!isEnabled && !isOneCommeEnabled) {
+            stopObserver();
+        }
     }
 }
 
@@ -393,7 +399,10 @@ async function processNewComment(liElement) {
             // 最終出力用テキスト
             let finalTest = contentClone.textContent.trim();
 
+            console.log("[DEBUG]settings.readName = " + String(settings.readName));
+
             // 名称を取得する設定の場合は名前を取得
+            name = "";
             if (settings.readName) {
                 // 名前を取得
                 const nameElement = liElement.querySelector('b.highchat_comment__name');
