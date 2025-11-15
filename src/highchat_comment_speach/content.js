@@ -399,8 +399,6 @@ async function processNewComment(liElement) {
             // 最終出力用テキスト
             let finalTest = contentClone.textContent.trim();
 
-            console.log("[DEBUG]settings.readName = " + String(settings.readName));
-
             // 名称を取得する設定の場合は名前を取得
             name = "";
             if (settings.readName) {
