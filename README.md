@@ -6,7 +6,8 @@ HTTP連携を利用した読み上げをやってみたくて作りました。<
 また、配信者向けコメントビューアーアプリであるわんコメとの連携機能もあります。<br>
 例えばTwitchとHighChatのコメントを画面上で同じ領域に表示したい場合に活用できます。<br>
 <br>
-わんコメ ＞ https://onecomme.com/<br>
+▼わんコメ公式サイト▼<br>
+https://onecomme.com/<br>
 <br>
 また、念のため簡易的な荒らし対策としてNGワード機能を実装しています。<br>
 普段は必要ないとは思いますが、もし荒らしが来た時の防衛手段は有ったほうが良いと思ったので作ってみました。<br>
@@ -22,20 +23,23 @@ Google Chrome(141.0.7390.108)、Microsoft Edge(141.0.3537.99)で動作確認済
 <br>
 
 # ダウンロード<!-- omit in toc -->
-[＞＞＞ HighChat チャット読み上げ ＜＜＜](https://github.com/unkmn/HighChat_comment_speach/blob/main/highchat_comment_speach_1.1.0.1.zip)<br>
+[＞＞＞ HighChat チャット読み上げ ＜＜＜](https://github.com/unkmn/HighChat_comment_speach/blob/main/highchat_comment_speach_1.1.0.2.zip)<br>
 <br>
 リンク先のダウンロードボタン（下図参照）からZIPファイルをダウンロードできます。<br>
 ![alt text](docimage/download.jpg)<br>
 
 <br>
 
-- 2025/11/09 ver.1.1.0.1
-  - デフォルトアイコン用ファイルパスを修正
+- 2025/11/15 ver.1.1.0.2
+  - 棒読みちゃん設定「改行を反映する」が機能していない不具合を修正
+    - 棒読みちゃんで読み上げ時にもわんコメ連携設定側の「改行を反映する」を参照していました
 
 <br>
 
 <details><summary>過去の変更履歴（クリックで展開）</summary>
 
+- 2025/11/09 ver.1.1.0.1
+  - デフォルトアイコン用ファイルパスを修正
 - 2025/10/31 1.1.0.0
   - わんコメ連携機能を追加
 - 2025/10/26 1.0.0.1

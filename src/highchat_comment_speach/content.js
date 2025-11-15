@@ -231,7 +231,7 @@ async function processNewComment(liElement) {
         });
 
         // <br>タグをあとで置換できるよう特殊文字列に置換
-        if (settings.isOneCommeBrEnabled) {
+        if (settings.isBrEnabled) {
             const brs = contentClone.querySelectorAll('br');
             brs.forEach(br => {
                 // <br> タグを "${{highchatBr}}" というテキストノードに置換する
@@ -404,16 +404,6 @@ async function processNewComment(liElement) {
             // 名前と敬称を連結
             if (name && settings.honorific) {
                 name += settings.honorific;
-            }
-
-            // <br>タグをあとで置換できるよう特殊文字列に置換
-            if (settings.isOneCommeBrEnabled) {
-                const brs = contentClone.querySelectorAll('br');
-                brs.forEach(br => {
-                    // <br> タグを "${{highchatBr}}" というテキストノードに置換する
-                    const replaceBrText = document.createTextNode(REPLACE_TXT_BR);
-                    br.parentNode.replaceChild(replaceBrText, br);
-                });
             }
 
             // 名前とコメントを連結
