@@ -23,7 +23,7 @@ Google Chrome(141.0.7390.108)、Microsoft Edge(141.0.3537.99)で動作確認済
 <br>
 
 # ダウンロード<!-- omit in toc -->
-[＞＞＞ HighChat チャット読み上げ ＜＜＜](https://github.com/unkmn/HighChat_comment_speach/blob/main/highchat_comment_speach_1.1.0.2.zip)<br>
+[＞＞＞ HighChat チャット読み上げ ＜＜＜](https://github.com/unkmn/HighChat_comment_speach/blob/main/highchat_comment_speach_1.1.0.3.zip)<br>
 <br>
 リンク先のダウンロードボタン（下図参照）からZIPファイルをダウンロードできます。<br>
 ![alt text](docimage/download.jpg)<br>
